@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 * {
   padding: 0;
   margin: 0;
@@ -20,7 +20,11 @@ nav {
   display: flex;
 }
 
-.p {
+img {
+  width: 100%;
+}
+
+p {
   line-height: 1.5;
 }
 
@@ -32,21 +36,44 @@ a:hover {
   text-decoration: underline;
 }
 
-img {
-  width: 100%;
-  width: 100%;
-  height: 100%;
-  max-height: 50vh;
-  padding: 20px;
+
+
+ul {
+  display: flex;
 }
 
-.nav__container {
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 24px;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
+li {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: 56px;
+  color: #7342d6;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.btn {
+  background-color: #7342d6;
+  color: white;
+  padding: 12px 24px;
+  font-size: 20px;
+  border-radius: 4px;
+  border: none;
 }
 
 .purple {
@@ -57,12 +84,14 @@ img {
   width: 160px;
 }
 
-ul {
+.nav__container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
   display: flex;
-}
-
-li {
-  list-style-type: none;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .nav__link {
@@ -91,7 +120,6 @@ li {
   background-color: transparent;
   font-size: 40px;
   border: none;
-  text-align: center;
   color: #7342d6;
   display: none;
 }
@@ -105,22 +133,23 @@ li {
   bottom: 0;
   z-index: 100;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  visibility: hidden;
   transition: all 300ms ease;
   opacity: 0;
-  visibility: hidden;
-}
-
-.menu--open .menu__backdrop {
-  opacity: 1;
-  visibility: visible;
-
+  transform: translate(100%);
 }
 
 .menu--open {
   max-height: 100vh;
-  overflow-y: hidden;
+  overflow: hidden;
+}
+
+.menu--open .menu__backdrop {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(0);
 }
 
 .menu__links {
@@ -134,35 +163,35 @@ li {
 }
 
 .menu__link {
-  font-size: 40px;
   color: white;
+  font-size: 40px;
 }
 
 .btn__menu--close {
   position: absolute;
-  right: 20px;
   top: 10px;
+  right: 20px;
   padding: 8px;
   color: white;
 }
 
-/*
+
+/* 
 
 LANDING
 
 */
 
 #landing {
-  background: rgba(115, 66, 214, 0.1);
+  background-color: rgba(115, 66, 214, 0.1)
 }
 
 header {
-  height: calc(110vh - 80px);
+  height: calc(100vh - 80px);
 }
 
 .header__container {
   width: 100%;
-  padding-top: 20px;
   max-width: 720px;
   margin: 0 auto;
   height: 100%;
@@ -177,39 +206,12 @@ header {
   align-items: center;
 }
 
-h1 {
-font-size: 56px;
-color: #7342d6;
-margin-bottom: 24px;
-text-align: center;
-}
-
-h2 {
-font-size: 32px;
-margin-bottom: 32px;
-text-align: center;
-}
-
-button {
-  cursor: pointer;
-}
-
-button:active {
-  transform: translateY(1px);
-}
-
-.btn {
-  background-color: #7342d6;
-  color: white;
-  padding: 12px 24px;
-  font-size: 20px;
-  border-radius: 4px;
-  border: none;
-}
-
 .header__img--wrapper {
   padding: 20px;
-  z-index: 2;
+
+  /* Added this after the tutorial to 
+  show it over the wave on larger screens */
+  z-index: 50;
 }
 
 .container {
@@ -231,22 +233,20 @@ button:active {
 .no-cursor {
   cursor: not-allowed;
 }
+/* 
 
-
-/*
-
-HIGHLIGHTS
+HIGHLIGHTS 
 
 */
-
 
 #highlights {
   position: relative;
   max-width: 100vw;
 }
 
-#highlights:after ,#highlights:before {
-  background: url(assets/wave.svg);
+#highlights:after,
+#highlights:before {
+  background: url('assets/wave.svg');
   content: "";
   position: absolute;
   width: 101vw;
@@ -256,7 +256,6 @@ HIGHLIGHTS
   background-size: cover;
   background-repeat: no-repeat;
 }
-
 
 #highlights:before {
   transform: translateY(-100%);
@@ -287,7 +286,7 @@ HIGHLIGHTS
 }
 
 .highlight__img {
-  border: 2px solid #7342d6b6;
+  border: 2px solid #7342d65d;
   color: #7342d6;
   width: 100px;
   height: 100px;
@@ -295,19 +294,19 @@ HIGHLIGHTS
   align-items: center;
   justify-content: center;
   border-radius: 4px;
-font-size: 32px;
-margin-bottom: 24px;
+  font-size: 32px;
+  margin-bottom: 24px;
 }
 
 .highlight__subtitle {
-font-size: 20px;
-margin-bottom: 16px;
-text-align: center;
+  font-size: 20px;
+  margin-bottom: 16px;
+  text-align: center;
 }
 
-/*
+/* 
 
-FEATURES
+FEATURES 
 
 */
 
@@ -329,13 +328,14 @@ FEATURES
 .book__img {
   max-height: 380px;
   transition: all 300ms ease;
-  cursor: no-drop;
+  cursor: not-allowed;
 }
 
 .book__img--wrapper {
   margin-bottom: 8px;
   border-radius: 4px;
   overflow: hidden;
+  display: flex;
 }
 
 .book:hover .book__img {
@@ -363,9 +363,9 @@ FEATURES
   color: #bfbfbf;
 }
 
-/*
+/* 
 
-EXPLORE 
+EXPLORE
 
 */
 
@@ -373,9 +373,9 @@ EXPLORE
   background-color: rgba(115, 66, 214, 0.1);
 }
 
-/*
+/* 
 
-FOOTER 
+FOOTER
 
 */
 
@@ -398,7 +398,7 @@ footer {
 }
 
 .footer__list {
-  margin: 8px 0 24px 0;
+  margin: 20px 0 24px 0;
 }
 
 .footer__link {
@@ -416,7 +416,7 @@ footer {
   }
 
   h2 {
-    font-size: 24px;
+    font-size: 26px;
   }
 
   button {
@@ -431,12 +431,12 @@ footer {
 
 /* SMALL PHONES, LARGE SMARTPHONES */
 @media (max-width: 550px) {
-  .nav__links {
-    display: none;
-  }
-
   .btn__menu {
     display: block;
+  }
+
+  .nav__links {
+    display: none;
   }
 
   .highlight {
@@ -444,6 +444,6 @@ footer {
   }
 
   .highlight:not(:last-child) {
-     margin-bottom: 24px;
+    margin-bottom: 24px;
   }
 }
